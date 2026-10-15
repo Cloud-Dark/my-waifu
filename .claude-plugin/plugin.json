@@ -1,0 +1,10 @@
+{
+  "name": "my-waifu",
+  "version": "1.0.0",
+  "description": "Tiga asisten berpersona untuk Claude Code: Waguri (asisten kantor), Alya (dokumentasi proyek), Marin (partner programmer).",
+  "author": { "name": "Cloud-Dark" },
+  "homepage": "https://github.com/Cloud-Dark/my-waifu",
+  "repository": "https://github.com/Cloud-Dark/my-waifu",
+  "license": "MIT",
+  "keywords": ["skills", "persona", "documentation", "programming", "indonesia"]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "my-waifu",
+  "owner": { "name": "Cloud-Dark" },
+  "plugins": [
+    {
+      "name": "my-waifu",
+      "source": "./",
+      "description": "Waguri, Alya, dan Marin — asisten berpersona untuk Claude Code."
+    }
+  ]
+}
