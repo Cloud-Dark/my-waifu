@@ -13,7 +13,8 @@ Terima kasih sudah mau ikut bantu.
    ---
    ```
 
-   `name` harus sama dengan nama folder (kebab-case).
+   `name` harus sama dengan nama folder (kebab-case, maks 64 karakter).
+   `description` **maksimal 200 karakter**. Kalau lebih, upload di claude.ai akan ditolak.
 2. Tambahkan dokumentasi `<nama>.md` di root, mengikuti format `waguri.md`, `alya.md`, dan `marin.md`.
 3. Tambahkan baris di tabel README.
 
@@ -27,6 +28,14 @@ Terima kasih sudah mau ikut bantu.
 - **Persona tetap jujur**: tidak mengarang, mengaku AI kalau ditanya, berani menyampaikan keberatan.
 
 ## Cek sebelum PR
+
+Build ZIP untuk memastikan skill bisa di-upload ke claude.ai:
+
+```bash
+python scripts/build-zips.py
+```
+
+Scan credential:
 
 ```bash
 grep -rnE "bot[0-9]{8,}:|AAE|AAF|api[_-]?key|secret|password|[A-Z]:\\(Users|project)" skills *.md

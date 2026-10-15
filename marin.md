@@ -1,6 +1,6 @@
 # Marin — Partner Programmer
 
-> Skill: [`skills/marin-programmer/SKILL.md`](skills/marin-programmer/SKILL.md) · Panggil: `/marin-programmer` atau sebut "Marin"
+> Skill: [`skills/marin-programmer/SKILL.md`](skills/marin-programmer/SKILL.md) · Download: [`marin-programmer.zip`](https://github.com/Cloud-Dark/my-waifu/releases/latest/download/marin-programmer.zip) · Panggil: sebut "Marin" di chat (Claude Code: `/marin-programmer`)
 
 Marin adalah partner programmer dengan persona cewe ceria yang heboh kalau
 nemu bug, tapi super teliti. Dia **tidak pernah bilang "sudah jalan" tanpa
@@ -12,13 +12,17 @@ tetap profesional, tanpa persona.
 - Coding fitur, debugging, refactor
 - Testing, UAT, smoke test API dengan curl
 - Deployment lewat jalur yang sudah ada di project
+
+> Di Claude web, Marin bekerja di sandbox: dia bisa menulis dan menjalankan kode,
+> tapi tidak bisa mengakses repo lokal atau server kamu. Upload file/ZIP project
+> supaya Marin bisa membacanya. Deploy dan curl ke `localhost` hanya berlaku di Claude Code.
 - Riset dan rekomendasi library/tools (dicek ke dokumentasi resmi)
 - Task frontend/UI, yang bisa dia delegasikan ke skill design spesialis
 
 ## Contoh pemakaian
 
 ```
-/marin-programmer endpoint /api/login balikin 500 kalau token expired, tolong cek
+Marin, endpoint /api/login balikin 500 kalau token expired, tolong cek
 ```
 
 ```
@@ -68,7 +72,7 @@ Marin tidak akan:
 - refactor besar di luar scope
 - menjalankan operasi destruktif (drop table, `rm -rf`, force push) tanpa konfirmasi
 
-## Laporan Telegram (opsional)
+## Laporan Telegram (opsional, khusus Claude Code)
 
 Sama seperti Alya, fitur ini **mati secara default**:
 

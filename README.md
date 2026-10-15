@@ -13,45 +13,57 @@ Persona hanya dipakai saat ngobrol. File, kode, dan dokumen yang dihasilkan teta
 Ketiganya saling melengkapi: Alya menulis `docs/`, Marin membaca `docs/` itu sebelum coding,
 dan Waguri menangani urusan kantor di sekitarnya.
 
-## Instalasi
+## Instalasi di Claude web (claude.ai)
 
-### Opsi 1 — sebagai plugin (paling mudah)
+Bisa dipakai di paket Free, Pro, Max, Team, dan Enterprise.
 
-Di Claude Code:
+1. Download ZIP skill yang kamu mau dari halaman
+   [**Releases**](https://github.com/Cloud-Dark/my-waifu/releases/latest):
+   - [`waguri.zip`](https://github.com/Cloud-Dark/my-waifu/releases/latest/download/waguri.zip)
+   - [`alya-dokumenter.zip`](https://github.com/Cloud-Dark/my-waifu/releases/latest/download/alya-dokumenter.zip)
+   - [`marin-programmer.zip`](https://github.com/Cloud-Dark/my-waifu/releases/latest/download/marin-programmer.zip)
+2. Buka **Settings → Capabilities**, lalu pastikan **Code execution and file creation** aktif.
+3. Buka **Customize → Skills**, klik **+**, pilih **Create skill → Upload a skill**, lalu pilih file ZIP-nya.
+   ZIP tidak perlu diekstrak.
+4. Pastikan toggle skill-nya menyala.
+
+### Cara memanggil
+
+Di Claude web, skill dipanggil **otomatis** sesuai isi chat. Tidak ada slash command.
+Cukup sebut namanya:
+
+```
+Marin, endpoint login-ku balikin 500 kalau token expired, tolong cek
+Alya, buatkan PRD untuk aplikasi kasir ini
+Waguri, rapikan email ini biar lebih sopan ke klien
+```
+
+Kalau skill belum terpanggil, tegaskan saja: "pakai skill Marin ya".
+
+## Instalasi di Claude Code (opsional)
+
+Copy folder skill ke `~/.claude/skills/`, lalu panggil langsung dengan
+`/marin-programmer`, `/alya-dokumenter`, atau `/waguri`:
+
+```bash
+git clone https://github.com/Cloud-Dark/my-waifu.git
+mkdir -p ~/.claude/skills
+cp -r my-waifu/skills/* ~/.claude/skills/
+```
+
+Atau lewat plugin. Dengan cara ini, nama skill diberi prefix, mis. `/my-waifu:marin-programmer`:
 
 ```
 /plugin marketplace add Cloud-Dark/my-waifu
 /plugin install my-waifu@my-waifu
 ```
 
-Skill akan muncul dengan prefix plugin, mis. `/my-waifu:marin-programmer`.
-
-### Opsi 2 — copy skill satu per satu
-
-Ambil hanya skill yang kamu mau:
-
-```bash
-git clone https://github.com/Cloud-Dark/my-waifu.git
-mkdir -p ~/.claude/skills
-cp -r my-waifu/skills/marin-programmer ~/.claude/skills/
-# atau: cp -r my-waifu/skills/* ~/.claude/skills/
-```
-
-PowerShell (Windows):
-
-```powershell
-git clone https://github.com/Cloud-Dark/my-waifu.git
-New-Item -ItemType Directory -Force "$HOME\.claude\skills" | Out-Null
-Copy-Item -Recurse my-waifu\skills\marin-programmer "$HOME\.claude\skills\"
-```
-
-Untuk satu project saja, copy ke `.claude/skills/` di root project.
-Restart Claude Code, lalu panggil `/marin-programmer`, `/alya-dokumenter`, atau `/waguri`.
-
-## Mengaktifkan laporan Telegram (opsional)
+## Mengaktifkan laporan Telegram (opsional, khusus Claude Code)
 
 Alya dan Marin bisa kirim laporan ke Telegram setiap task selesai. Fitur ini
 **mati secara default** dan aktif hanya kalau environment variable di-set.
+Di Claude web tidak ada environment variable, jadi fitur ini otomatis dilewati.
+Semua fitur lain tetap jalan.
 
 1. Buat bot lewat [@BotFather](https://t.me/BotFather) untuk mendapatkan token.
 2. Kirim pesan ke bot, lalu buka `https://api.telegram.org/bot<TOKEN>/getUpdates` untuk melihat `chat.id`.
@@ -79,6 +91,8 @@ Atau taruh di blok `env` pada `~/.claude/settings.json` (file lokal, bukan bagia
 .claude-plugin/
   plugin.json          manifest plugin
   marketplace.json     supaya bisa di-install via /plugin
+scripts/
+  build-zips.py        bikin dist/<skill>.zip untuk upload ke claude.ai
 skills/
   waguri/SKILL.md
   alya-dokumenter/SKILL.md

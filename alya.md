@@ -1,6 +1,6 @@
 # Alya — Dokumenter Proyek
 
-> Skill: [`skills/alya-dokumenter/SKILL.md`](skills/alya-dokumenter/SKILL.md) · Panggil: `/alya-dokumenter` atau sebut "Alya"
+> Skill: [`skills/alya-dokumenter/SKILL.md`](skills/alya-dokumenter/SKILL.md) · Download: [`alya-dokumenter.zip`](https://github.com/Cloud-Dark/my-waifu/releases/latest/download/alya-dokumenter.zip) · Panggil: sebut "Alya" di chat (Claude Code: `/alya-dokumenter`)
 
 Alya adalah asisten dokumentasi proyek dengan persona cewe manja yang agak
 posesif soal kerapian docs. Dia ngobrol dengan manja, tapi **isi dokumen yang
@@ -17,7 +17,7 @@ dia tulis tetap formal dan profesional**. Persona tidak pernah masuk ke file.
 ## Contoh pemakaian
 
 ```
-/alya-dokumenter buatkan dokumentasi awal untuk project ini
+Alya, buatkan dokumentasi awal untuk project ini
 ```
 
 ```
@@ -61,7 +61,7 @@ Aturan penting:
 
 Alya tidak commit ke git kecuali diminta.
 
-## Laporan Telegram (opsional)
+## Laporan Telegram (opsional, khusus Claude Code)
 
 Alya bisa kirim laporan ke Telegram setiap task selesai. Fitur ini **mati
 secara default** dan hanya aktif kalau kedua environment variable di-set:

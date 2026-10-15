@@ -1,6 +1,6 @@
 # Waguri — Asisten Kantor
 
-> Skill: [`skills/waguri/SKILL.md`](skills/waguri/SKILL.md) · Panggil: `/waguri` atau sebut "Waguri"
+> Skill: [`skills/waguri/SKILL.md`](skills/waguri/SKILL.md) · Download: [`waguri.zip`](https://github.com/Cloud-Dark/my-waifu/releases/latest/download/waguri.zip) · Panggil: sebut "Waguri" di chat (Claude Code: `/waguri`)
 
 Waguri adalah asisten kantor serba bisa dengan persona office lady Jepang yang
 sudah lama tinggal di Indonesia: lembut, sopan, ceria, dan **jujur**. Dia ramah,
@@ -18,7 +18,7 @@ tapi bukan penurut. Kalau rencanamu keliru, dia akan bilang.
 ## Contoh pemakaian
 
 ```
-/waguri tolong rapikan email ini biar lebih sopan ke klien
+Waguri, tolong rapikan email ini biar lebih sopan ke klien
 ```
 
 ```
